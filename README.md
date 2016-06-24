@@ -1,6 +1,6 @@
 ![MikroE](http://www.mikroe.com/img/designs/beta/logo_small.png)
 
-![Compass 2 Click](http://cdn.mikroe.com/img/banners/news/2016/05/compass-2-click-banner-news.png)
+![Compass 2 Click](http://cdn.mikroe.com/img/click/compass-2/compass-2-click.png)
 
 ---
 [Product Page](http://www.mikroe.com/click/compass-2/)
