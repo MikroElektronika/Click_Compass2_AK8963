@@ -35,11 +35,6 @@ Key benefits
     Ready-to-use examples save development time
     Supported in all MikroElektronika compilers
 
-#title & desc
-
-Compass 2 click – board with AK8963 3-axis electronic compass | MikroElektronika
-
-Compass 2 click is a mikroBUS add-on board with an AK8963 3-axis electronic compass. The high sensitivity sensor is based on the Hall effect. The built-in ADC converter can be set up at either 14 or 16 bit resolution, for each of the 3 axes.
 ---
 
 ### Example
