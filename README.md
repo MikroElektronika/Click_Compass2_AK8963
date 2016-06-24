@@ -43,7 +43,7 @@ Key benefits
 * MCU:             STM32F107VC
 * Dev.Board:       EasyMx Pro v7
 * Oscillator:      72 Mhz internal
-* Ext. Modules:    CLICKNAME click
+* Ext. Modules:    Compass 2 click
 * SW:              MikroC PRO for ARM 4.7.4
 
 ```
