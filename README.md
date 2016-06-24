@@ -1,11 +1,11 @@
 ![MikroE](http://www.mikroe.com/img/designs/beta/logo_small.png)
 
-![Compass 2 Click](http://cdn.mikroe.com/img/banners/news/2016/05/flash-2-click-banner-news.png)
+![Compass 2 Click](http://cdn.mikroe.com/img/banners/news/2016/05/compass-2-click-banner-news.png)
 
 ---
-[Product Page](http://www.mikroe.com/click/flash-2/)
+[Product Page](http://www.mikroe.com/click/compass-2/)
 
-[Manual Page](http://docs.mikroe.com/Flash_2_click)
+[Manual Page](http://docs.mikroe.com/Compass_2_Click)
 
 [Learn Page](http://learn.mikroe.com/this-nand-nor-that-nand/)
 
@@ -13,8 +13,33 @@
 
 ### General Description
 
-Flash 2 click is a mikroBUS™ add-on board for adding more Flash Memory to your target board microcontroller. It carries Microchip’s SST26VF064B flash-memory module with 64 Mbits capacity. It’s a highly reliable module with a specified minimum of 100,000 read and write cycles and with over 100 years of Data Retention. For data security, the module features a One-Time Programmable (OTP) 2 KB bit secure ID and a 64 bit unique, factory pre-programmed identifier. Additional software security measures include inidividual-block write Protection with permanent lock-down capability. Flash 2 click communicates with the target MCU through the mikroBUS™ SPI interface (CS#, SCK, MISO, MOSI) with additional functionality provided by the #HOLD pin (in place of default mikroBUS™ RST pin). The board is designed to use a 3.3V power supply.
+Compass 2 click
 
+Compass 2 click is a mikroBUS add-on board with an AK8963 3-axis electronic compass. The high sensitivity sensor is based on the Hall effect. The built-in ADC converter can be set up at either 14 or 16 bit resolution, for each of the 3 axes. The sensitivity is 0.6µT/LSB typ. at 14-bit, and 0.15µT/LSB at 16-bit. Compass 2 click communicates with the target MCU through either through the I2C or SPI interface, with an added INT pin. Onboard jumpers enable you to switch between two interfaces. The board is designed to use a 3.3 power supply only.
+
+Applications
+
+Position detection, navigation and orientation for portable devices.
+
+Key features
+
+    AK8963 IC
+    Sensitivity: 0.6µT/LSB typ. at 14-bit, and 0.15µT/LSB at 16-bit
+    SPI or I2C interface
+    3.3V
+
+Key benefits
+
+    Selectable interface
+    Configurable ADC resolution
+    Ready-to-use examples save development time
+    Supported in all MikroElektronika compilers
+
+#title & desc
+
+Compass 2 click – board with AK8963 3-axis electronic compass | MikroElektronika
+
+Compass 2 click is a mikroBUS add-on board with an AK8963 3-axis electronic compass. The high sensitivity sensor is based on the Hall effect. The built-in ADC converter can be set up at either 14 or 16 bit resolution, for each of the 3 axes.
 ---
 
 ### Example
