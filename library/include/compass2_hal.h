@@ -39,10 +39,10 @@
 /******************************************************************************
 * Preprocessor Constants
 *******************************************************************************/
-#define READ                    1                // READ BIT
-#define WRITE                   0                // WRITE BIT
-#define COMMAND_SIZE            1                // COMMAND OR REGISTER SIZE ( Bytes )
-#define MAX_BUFF_SIZE           256                // BUFFER SIZE ( Bytes )
+#define READ                    1                /**<  READ BIT	*/
+#define WRITE                   0                /**<  WRITE BIT */
+#define COMMAND_SIZE            1                /**<  COMMAND OR REGISTER SIZE ( Bytes ) */
+#define MAX_BUFF_SIZE           256              /**<  BUFFER SIZE ( Bytes ) */
 /******************************************************************************
 * Configuration Constants
 *******************************************************************************/

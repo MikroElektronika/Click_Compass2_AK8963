@@ -24,7 +24,7 @@
  *   MCU:             STM32F107VC
  *   Dev.Board:       EasyMx Pro v7
  *   Oscillator:      72 Mhz internal
- *   Ext. Modules:    Accel 3 Click
+ *   Ext. Modules:    Compass 2 Click
  *   SW:              ARM 4.5.2
  *
  */
