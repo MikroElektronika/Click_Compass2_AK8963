@@ -65,24 +65,62 @@ char text[20] = { 0 };
 /*      Functions
  ****************************/
 
+#include <stdint.h>
+#include "compass2_hw.h"
+
+sbit COMPASS2_CS at GPIOD_ODR.B13;
+sbit COMPASS2_RST at GPIOC_ODR.B2;
+
+void system_setup( bus_mode_t mode, uint8_t addr );
+
+int16_t mx, my, mz;
+char text[20] = { 0 };
 
 void system_setup( bus_mode_t mode, uint8_t addr )
 {
+        uint8_t my_address = 0;
+
         // GPIOs
         GPIO_Digital_Output( &GPIOB_BASE, _GPIO_PINMASK_13 );
+        GPIO_Digital_Output( &GPIOC_BASE, _GPIO_PINMASK_2 );
 
         // UART
         UART1_Init( 9600 );
+                Delay_ms(200);
         UART1_Write_Text( "UART Initialized\r\n" );
 
         // I2C
         I2C1_Init_Advanced( 100000, &_GPIO_MODULE_I2C1_PB67 );
+                Delay_ms(500);
         UART1_Write_Text( "I2C Initialized\r\n" );
+        // SPI
+/*        SPI3_Init_Advanced( _SPI_FPCLK_DIV16, _SPI_MASTER | _SPI_8_BIT |     //SPI SETUP
+                    _SPI_CLK_IDLE_HIGH | _SPI_SECOND_CLK_EDGE_TRANSITION |
+                    _SPI_MSB_FIRST | _SPI_SS_DISABLE | _SPI_SSM_ENABLE |
+                    _SPI_SSI_1, &_GPIO_MODULE_SPI3_PC10_11_12 );
+        UART1_Write_Text( "SPI Initialized\r\n" );  */
+          //Reset
+        COMPASS2_RST = 0;
+        Delay_ms(10);
+        COMPASS2_RST = 1;
+        Delay_ms(200);
 
         // Compass 2
         compass2_hw_init( addr, mode );
-        compass2_set_mode( MODE_CONT_1 );
-        compass2_set_scale_factor( RES_16 );
+        UART1_Write_Text( "Compass Initialized\r\n" );
+
+        // Device Address
+        my_address = compass2_get_device_id();
+        IntToStr( my_address, text );
+        UART1_Write_Text( text );
+        UART1_Write_Text( "\r\n" );
+
+        // Continuous Measurment Mode / Output Res
+        compass2_set_output_res( RES_16 );
+        compass2_set_mode( MODE_CONT_2 );
+
+        UART1_Write_Text( "Compass2 Setup Completed..\r\n" );
+}
 
 
 ```
@@ -91,7 +129,7 @@ void system_setup( bus_mode_t mode, uint8_t addr )
 
 void main()
 {
-  // Local Declarations
+        // Local Declarations
         uint8_t address = 0x0F;
         bus_mode_t my_mode = I2C;
         float heading = 0;
@@ -99,69 +137,22 @@ void main()
 
         system_setup( my_mode, address );
 
-        while(1)
+                UART1_Write_Text( "\r\n----Please Hold The Click Level----\r\n\r\n\r\n" );
+                Delay_ms(2000);
+
+        while (1)
         {
-            compass2_get_all_values( &mx, &my, &mz );
-            heading = compass2_get_compass_heading( mx, my, mz );
+             while( !compass2_get_data_ready() );   //Wait for data to be ready
 
-            if( heading < 0 )
-                heading += 360;
+                        compass2_get_all_values( &mx, &my, &mz );               //Get x,y,z values for heading
+            heading = compass2_get_compass_heading( mx, my, mz );   //Get heading
 
-            UART1_Write_Text( "Heading: " );
-            FloatToStr( heading, text );
-            UART1_Write_Text( text );
-            UART1_Write_Text( " Direction: " );
-
-            if( heading >= 330 || heading <= 30 )
-            {
-                uart_text[0] = 'N';
-                uart_text[1] = '\n';
-            }
-            else if( heading >= 300 && heading <= 330 )
-            {
-                uart_text[0] = 'N';
-                uart_text[1] = 'W';
-                uart_text[2] = '\n';
-            }
-            else if( heading >= 240 && heading <= 300)
-            {
-                uart_text[0] = 'W';
-                uart_text[1] = '\n';
-            }
-            else if( heading >= 210 && heading <= 240 )
-            {
-                uart_text[0] = 'S';
-                uart_text[1] = 'W';
-                uart_text[2] = '\n';
-            }
-            else if( heading <= 210 && heading >= 150 )
-            {
-                uart_text[0] = 'S';
-                uart_text[1] = '\n';
-            }
-            else if( heading <= 150 && heading >= 120 )
-            {
-                uart_text[0] = 'S';
-                uart_text[1] = 'E';
-                uart_text[2] = '\n';
-            }
-            else if( heading <= 120 && heading >= 60 )
-            {
-                uart_text[0] = 'E';
-                uart_text[1] = '\n';
-            }
-            else if( heading <= 60 && heading >= 30 )
-            {
-                uart_text[0] = 'N';
-                uart_text[1] = 'E';
-                uart_text[2] = '\n';
-            }
-
-            UART1_Write_Text( uart_text );
-            UART1_Write_Text( "\r\n" );
-
-            Delay_ms(100);
+                        FloatToStr( heading, uart_text );
+                        UART1_Write_Text( "Heading : " );
+                        UART1_Write_Text( uart_text );
+                        UART1_Write_Text( "\r\n" );
         }
 
 }
+
 ```
