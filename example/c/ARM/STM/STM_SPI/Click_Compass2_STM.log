@@ -1,0 +1,30 @@
+0	1	mikroCARM.exe -MSF -DBG -pSTM32F107VC -BIN -LHF -DL -SSA -O11111114 -fo72 -N"C:\Users\katarina.perendic\Desktop\Compass_2_Click (1)\Compass_2_Click\SW\example\c\ARM\STM\STM_SPI\Click_Compass2_STM.mcpar" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\ST M3\" -SP"C:\Users\katarina.perendic\Desktop\Compass_2_Click (1)\Compass_2_Click\SW\example\c\ARM\STM\STM_SPI\" -SP"C:\Users\katarina.perendic\Desktop\Compass_2_Click (1)\Compass_2_Click\SW\library\HAL\" -SP"C:\Users\katarina.perendic\Desktop\Compass_2_Click (1)\Compass_2_Click\SW\library\" -SP"C:\Users\katarina.perendic\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Packages\mikroBUS Board Definition API\Uses\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Packages\mikroBUS Board Definition API\Uses\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Uses\TI M3\" -IP"C:\Users\katarina.perendic\Desktop\Compass_2_Click (1)\Compass_2_Click\SW\example\c\ARM\STM\STM_SPI\" -IP"C:\Users\katarina.perendic\Desktop\Compass_2_Click (1)\Compass_2_Click\SW\library\" -IP"C:\Users\katarina.perendic\Desktop\Compass_2_Click (1)\Compass_2_Click\SW\library\HAL\" -IP"C:\Users\katarina.perendic\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Packages\mikroBUS Board Definition API\Uses\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Packages\mikroBUS Board Definition API\Uses\" "Click_Compass2_STM.c" "__compass2_driver.c" "__Lib_Math.emcl" "__Lib_MathDouble.emcl" "__Lib_Delays.emcl" "__Lib_System_105_107.emcl" "__Lib_GPIO_32F10x_Defs.emcl" "__Lib_GPIO_32F10x.emcl" "__Lib_CString.emcl" "__Lib_Conversions.emcl" "__Lib_I2C_12.emcl" "__Lib_SPI_123.emcl" "__Lib_UART_123_45.emcl" "easymx_v7_STM32F107VC.emcl" "Click_Compass2.pld"	 
+warning: 0	1501	Specified search path does not exist: 'C:\Users\katarina.perendic\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Packages\mikroBUS Board Definition API\Uses'	 
+warning: 0	1502	Specified include path does not exist: 'C:\Users\katarina.perendic\Public\Documents\Mikroelektronika\mikroC PRO for ARM\Packages\mikroBUS Board Definition API\Uses'	 
+diagnostics: 0	122	Compilation Started	stdint.h
+diagnostics: 89	123	Compiled Successfully	Click_Compass2_STM.c
+diagnostics: 0	122	Compilation Started	stdint.h
+warning: 180	1505	Suspicious pointer conversion	__compass2_driver.c
+warning: 180	1505	Suspicious pointer conversion	__compass2_driver.c
+warning: 180	1505	Suspicious pointer conversion	__compass2_driver.c
+warning: 197	1503	Result is not defined in function: 'compass2_softwareReset'	__compass2_driver.c
+warning: 257	1503	Result is not defined in function: 'compass2_setOUTResolution'	__compass2_driver.c
+warning: 266	1503	Result is not defined in function: 'compass2_setMode'	__compass2_driver.c
+diagnostics: 338	123	Compiled Successfully	__compass2_driver.c
+hint: 323	1164	Variable 'tmp' has been eliminated by optimizer	__compass2_driver.c
+hint: 35	1164	Variable 'tmp' has been eliminated by optimizer	__compass2_driver.c
+hint: 84	1164	Variable 'tmp' has been eliminated by optimizer	__compass2_driver.c
+hint: 101	1164	Variable 'ptr' has been eliminated by optimizer	__compass2_driver.c
+hint: 109	1164	Variable 'ptr' has been eliminated by optimizer	__compass2_driver.c
+hint: 219	1164	Variable 'buffer' has been eliminated by optimizer	__compass2_driver.c
+hint: 228	1164	Variable 'buffer' has been eliminated by optimizer	__compass2_driver.c
+hint: 250	1164	Variable 'buffer' has been eliminated by optimizer	__compass2_driver.c
+hint: 271	1164	Variable 'msb' has been eliminated by optimizer	__compass2_driver.c
+diagnostics: 0	127	All files Compiled in 140 ms	 
+hint: 0	1144	Used RX: 16 (100%)   Free RX: 0 (0%)	Used RX: 16 (100%)   Free RX: 0 (0%)
+hint: 0	1144	Static RAM (bytes): 203   Dynamic RAM (bytes): 65329	Static RAM (bytes): 203   Dynamic RAM (bytes): 65329
+hint: 0	1144	Used ROM (bytes): 10327 (4%)  Free ROM (bytes): 251817 (96%)	Used ROM (bytes): 10327 (4%)  Free ROM (bytes): 251817 (96%)
+diagnostics: 0	125	Project Linked Successfully	Click_Compass2_STM.mcpar
+diagnostics: 0	128	Linked in 297 ms	 
+diagnostics: 0	129	Project 'Click_Compass2_STM.mcpar' completed: 547 ms	 
+diagnostics: 0	103	Finished successfully: 12 sep 2018, 07:29:20	Click_Compass2_STM.mcpar
